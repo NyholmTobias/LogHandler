@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using LogHandler.Implementations;
 using System.Diagnostics;
-using System;
 
 namespace LogHandler.Tests
 {
@@ -129,7 +128,7 @@ namespace LogHandler.Tests
         public void PrintPerformanceLog_AllStandardVariables_SuccessfulResultAndAStringReturnValue()
         {
             //Arrange 
-            var perfLog = PerformanceLogGeneric<string>.CreatePerformanceLog("TestMethod",
+            var perfLog = PerformanceLog<string>.CreatePerformanceLog("TestMethod",
                 () => MethodWithStringReturnValueForPerformanceTests(50),
                 "Hello");
 
@@ -145,7 +144,7 @@ namespace LogHandler.Tests
         public void PrintPerformanceLog_AllStandardVariables_SuccessfulResultAndAnIntReturnValue()
         {
             //Arrange 
-            var perfLog = PerformanceLogGeneric<int>.CreatePerformanceLog("TestMethod",
+            var perfLog = PerformanceLog<int>.CreatePerformanceLog("TestMethod",
                 () => MethodWithIntReturnValueForPerformanceTests(3),
                 "Hello");
 

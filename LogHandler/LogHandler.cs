@@ -1,5 +1,4 @@
-﻿using LogHandler.Factory;
-using LogHandler.Implementations;
+﻿using LogHandler.Implementations;
 using LogHandler.Interfaces;
 using System.Diagnostics;
 
@@ -47,14 +46,8 @@ namespace LogHandler
             {
                 throw new ArgumentNullException(nameof(log));
             }
-
-            if (log.GetType().GenericTypeArguments.Length > 0)
-            {
-                Type genericType = log.GetType().GenericTypeArguments[0];
-            }
             
-            if(log.GetType().Equals(typeof(PerformanceLog)) || 
-                log.GetType().Equals(typeof(PerformanceLogGeneric<genericType>)))
+            if(log.GetType().Equals(typeof(PerformanceLog)) || log is PerformanceLog)
             {
                 PerformanceLog pLog = (PerformanceLog)log;
                 Debug.Write(PerformanceLogToString(pLog));
@@ -69,6 +62,7 @@ namespace LogHandler
                 if (messages.Contains(log)) messages.Remove(log);
                 return true;
             }
+
             throw new ArgumentException(null, nameof(log));
         }
 
