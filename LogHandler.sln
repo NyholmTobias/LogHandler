@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogHandler", "LogHandler\LogHandler.csproj", "{0333EEA5-F3E1-4170-ABE2-4337B28D1721}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogHandlerTests", "LogHandlerTests\LogHandlerTests.csproj", "{BA9B196E-D29E-47B4-A152-83FB481A0D74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0333EEA5-F3E1-4170-ABE2-4337B28D1721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0333EEA5-F3E1-4170-ABE2-4337B28D1721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0333EEA5-F3E1-4170-ABE2-4337B28D1721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0333EEA5-F3E1-4170-ABE2-4337B28D1721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA9B196E-D29E-47B4-A152-83FB481A0D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA9B196E-D29E-47B4-A152-83FB481A0D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA9B196E-D29E-47B4-A152-83FB481A0D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA9B196E-D29E-47B4-A152-83FB481A0D74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4D05659-E8A9-44F6-8EF0-2C2B8F56EA82}
+	EndGlobalSection
+EndGlobal
