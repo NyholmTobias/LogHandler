@@ -10,15 +10,74 @@ namespace LogHandler.Tests
         private readonly LogHandler _loghandler = LogHandler.GetInstance();
 
         [TestMethod()]
-        public void AddLogToBulkTest()
+        public void AddDebugLogToBulkTest()
         {
-            Assert.Fail();
+            //Arrange 
+            var log = DebugLog.CreateDebugLog("Test", "Test");
+
+            //Act
+            var res = _loghandler.AddLogToBulk(log);
+
+
+            //Assert
+            Assert.IsTrue(res);
+        }
+
+        [TestMethod()]
+        public void AddPerformanceLogToBulkTest()
+        {
+            //Arrange 
+            var log = PerformanceLog.CreatePerformanceLog("Test",
+                () => MethodForPerformanceTests(40),
+                "Test");
+
+            //Act
+            var res = _loghandler.AddLogToBulk(log);
+
+
+            //Assert
+            Assert.IsTrue(res);
+        }
+
+        [TestMethod()]
+        public void AddGenericPerformanceLogToBulkTest()
+        {
+            //Arrange 
+            var log = PerformanceLog<int>.CreatePerformanceLog("Test",
+                () => MethodWithIntReturnValueForPerformanceTests(3),
+                "Test");
+
+            //Act
+            var res = _loghandler.AddLogToBulk(log);
+
+
+            //Assert
+            Assert.IsTrue(res);
+            Assert.AreEqual(8, log.ReturnValue);
         }
 
         [TestMethod()]
         public void PrintLogBulkTest()
         {
-            Assert.Fail();
+            //Arrange
+            _loghandler.AddLogToBulk(DebugLog.CreateDebugLog("Test", "Test"));
+            _loghandler.AddLogToBulk(DebugLog.CreateDebugLog("Test", "Test"));
+            _loghandler.AddLogToBulk(DebugLog.CreateDebugLog("Test", "Test"));
+            _loghandler.AddLogToBulk(PerformanceLog.CreatePerformanceLog("Test", () => MethodForPerformanceTests(10), "Test"));
+            _loghandler.AddLogToBulk(PerformanceLog.CreatePerformanceLog("Test", () => MethodForPerformanceTests(10), "Test"));
+            _loghandler.AddLogToBulk(PerformanceLog.CreatePerformanceLog("Test", () => MethodForPerformanceTests(10), "Test"));
+            _loghandler.AddLogToBulk(PerformanceLog<int>.CreatePerformanceLog("Test", () => MethodWithIntReturnValueForPerformanceTests(10), "Test"));
+            _loghandler.AddLogToBulk(PerformanceLog<int>.CreatePerformanceLog("Test", () => MethodWithIntReturnValueForPerformanceTests(10), "Test"));
+            _loghandler.AddLogToBulk(PerformanceLog<int>.CreatePerformanceLog("Test", () => MethodWithIntReturnValueForPerformanceTests(10), "Test"));
+            _loghandler.AddLogToBulk(PerformanceLog<string>.CreatePerformanceLog("Test", () => MethodWithStringReturnValueForPerformanceTests(10), "Test"));
+            _loghandler.AddLogToBulk(PerformanceLog<string>.CreatePerformanceLog("Test", () => MethodWithStringReturnValueForPerformanceTests(10), "Test"));
+            _loghandler.AddLogToBulk(PerformanceLog<string>.CreatePerformanceLog("Test", () => MethodWithStringReturnValueForPerformanceTests(10), "Test"));
+
+            //Act
+            var res = _loghandler.PrintLogBulk();
+
+            //Assert
+            Assert.IsTrue(res);
         }
 
         [TestMethod()]

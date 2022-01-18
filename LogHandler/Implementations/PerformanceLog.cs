@@ -11,6 +11,12 @@ namespace LogHandler.Implementations
         public readonly List<string> ExtraVariables = new();
         protected readonly static Stopwatch _stopwatch = new();
 
+        /// <summary>
+        /// Protected constructor, use CreatePerformanceLog instead.
+        /// </summary>
+        /// <param name="methodName">The name of the method that is beeing checked for performance.</param>
+        /// <param name="milliseconds">The number of milliseconds it took to run the passed action parameter.</param>
+        /// <param name="messageText">Specific message.</param>
         protected PerformanceLog(string methodName, long milliseconds, string messageText = "")
         {
             MethodName = methodName;
