@@ -43,17 +43,17 @@ namespace LogHandler.Tests
         public void AddGenericPerformanceLogToBulkTest()
         {
             //Arrange 
-            var log = PerformanceLog<int>.CreatePerformanceLog("Test",
+            var log = PerformanceLog.CreatePerformanceLog("Test",
                 () => MethodWithIntReturnValueForPerformanceTests(3),
                 "Test");
 
             //Act
-            var res = _loghandler.AddLogToBulk(log);
+            var res = _loghandler.AddLogToBulk(log.log);
 
 
             //Assert
             Assert.IsTrue(res);
-            Assert.AreEqual(8, log.ReturnValue);
+            Assert.AreEqual(8, log.returnValue);
         }
 
         [TestMethod()]
@@ -66,12 +66,12 @@ namespace LogHandler.Tests
             _loghandler.AddLogToBulk(PerformanceLog.CreatePerformanceLog("Test", () => MethodForPerformanceTests(10), "Test"));
             _loghandler.AddLogToBulk(PerformanceLog.CreatePerformanceLog("Test", () => MethodForPerformanceTests(10), "Test"));
             _loghandler.AddLogToBulk(PerformanceLog.CreatePerformanceLog("Test", () => MethodForPerformanceTests(10), "Test"));
-            _loghandler.AddLogToBulk(PerformanceLog<int>.CreatePerformanceLog("Test", () => MethodWithIntReturnValueForPerformanceTests(10), "Test"));
-            _loghandler.AddLogToBulk(PerformanceLog<int>.CreatePerformanceLog("Test", () => MethodWithIntReturnValueForPerformanceTests(10), "Test"));
-            _loghandler.AddLogToBulk(PerformanceLog<int>.CreatePerformanceLog("Test", () => MethodWithIntReturnValueForPerformanceTests(10), "Test"));
-            _loghandler.AddLogToBulk(PerformanceLog<string>.CreatePerformanceLog("Test", () => MethodWithStringReturnValueForPerformanceTests(10), "Test"));
-            _loghandler.AddLogToBulk(PerformanceLog<string>.CreatePerformanceLog("Test", () => MethodWithStringReturnValueForPerformanceTests(10), "Test"));
-            _loghandler.AddLogToBulk(PerformanceLog<string>.CreatePerformanceLog("Test", () => MethodWithStringReturnValueForPerformanceTests(10), "Test"));
+            _loghandler.AddLogToBulk(PerformanceLog.CreatePerformanceLog("Test", () => MethodWithIntReturnValueForPerformanceTests(10), "Test").log);
+            _loghandler.AddLogToBulk(PerformanceLog.CreatePerformanceLog("Test", () => MethodWithIntReturnValueForPerformanceTests(10), "Test").log);
+            _loghandler.AddLogToBulk(PerformanceLog.CreatePerformanceLog("Test", () => MethodWithIntReturnValueForPerformanceTests(10), "Test").log);
+            _loghandler.AddLogToBulk(PerformanceLog.CreatePerformanceLog("Test", () => MethodWithStringReturnValueForPerformanceTests(10), "Test").log);
+            _loghandler.AddLogToBulk(PerformanceLog.CreatePerformanceLog("Test", () => MethodWithStringReturnValueForPerformanceTests(10), "Test").log);
+            _loghandler.AddLogToBulk(PerformanceLog.CreatePerformanceLog("Test", () => MethodWithStringReturnValueForPerformanceTests(10), "Test").log);
 
             //Act
             var res = _loghandler.PrintLogBulk();
@@ -187,32 +187,32 @@ namespace LogHandler.Tests
         public void PrintPerformanceLog_AllStandardVariables_SuccessfulResultAndAStringReturnValue()
         {
             //Arrange 
-            var perfLog = PerformanceLog<string>.CreatePerformanceLog("TestMethod",
+            var (log, returnValue) = PerformanceLog.CreatePerformanceLog("TestMethod",
                 () => MethodWithStringReturnValueForPerformanceTests(50),
                 "Hello");
 
             //Act
-            var res = _loghandler.PrintLog(perfLog);
+            var res = _loghandler.PrintLog(log);
 
             //Assert
             Assert.IsTrue(res);
-            Assert.AreEqual("hello, you made it!", perfLog.ReturnValue);
+            Assert.AreEqual("hello, you made it!", returnValue);
         }
 
         [TestMethod()]
         public void PrintPerformanceLog_AllStandardVariables_SuccessfulResultAndAnIntReturnValue()
         {
             //Arrange 
-            var perfLog = PerformanceLog<int>.CreatePerformanceLog("TestMethod",
+            var (log, returnValue) = PerformanceLog.CreatePerformanceLog("TestMethod",
                 () => MethodWithIntReturnValueForPerformanceTests(3),
                 "Hello");
 
             //Act
-            var res = _loghandler.PrintLog(perfLog);
+            var res = _loghandler.PrintLog(log);
 
             //Assert
             Assert.IsTrue(res);
-            Assert.AreEqual(8, perfLog.ReturnValue);
+            Assert.AreEqual(8, returnValue);
         }
 
         private static void MethodForPerformanceTests(int numberOfRounds)
