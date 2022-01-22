@@ -80,7 +80,7 @@ namespace LogHandler
                 throw new ArgumentNullException(nameof(log));
             }
             
-            if(log.GetType().Equals(typeof(PerformanceLog)) || log is PerformanceLog)
+            if(log.GetType().Equals(typeof(PerformanceLog)))
             {
                 PerformanceLog pLog = (PerformanceLog)log;
                 Debug.Write(PerformanceLogToString(pLog));

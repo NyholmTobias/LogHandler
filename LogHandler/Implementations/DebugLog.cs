@@ -31,10 +31,10 @@ namespace LogHandler.Implementations
         }
 
         /// <summary>
-        /// Adds a custom string property to the Debuglog object.
+        /// Adds a custom string property to the DebugLog object.
         /// </summary>
         /// <param name="message">The body of the custom string.</param>
-        /// <returns>Returns the same instance of Debuglog but with the added custom string property.</returns>
+        /// <returns>Returns the same instance of DebugLog but with the added custom string property.</returns>
         public IDebugLog AddLogVariable(string message)
         {   
             ExtraVariables.Add(message);
