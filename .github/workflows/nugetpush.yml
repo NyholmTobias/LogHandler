@@ -18,6 +18,6 @@ jobs:
  - name: Publish LogHandler
  uses: brandedoutcast/publish-nuget@v2.5.2
  with:
- PROJECT_FILE_PATH: https://github.com/NyholmTobias/LogHandler/LogHandler
+ PROJECT_FILE_PATH: LogHandler/LogHandler.csproj
  NUGET_KEY: ${{secrets.NUGET_API_KEY}}
- PACKAGE_NAME: MMPClassEnumerator
+ PACKAGE_NAME: LogHandler
