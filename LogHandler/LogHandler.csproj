@@ -9,15 +9,11 @@
 	<AssemblyVersion>1.0.0.0</AssemblyVersion>
 	<Authors>Tobias Nyholm</Authors>
 	<Description>Enables logging for your project, can bulk log and also customize properties, enviroment and format for the logging.</Description>
-	<PackageProjectUrl>
-		https://github.com/NyholmTobias/LogHandler
-	</PackageProjectUrl>
+	<PackageProjectUrl>https://github.com/NyholmTobias/LogHandler</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/NyholmTobias/LogHandler</RepositoryUrl>
 	<PackageTags>Logging; Bulk log; Performance; Debug</PackageTags>
-	<ApplicationIcon>
-		Icons/pencil.ico
-	</ApplicationIcon>
-	<PackageIcon>Icons/pencil.png</PackageIcon>
+	<ApplicationIcon>./pencil.ico</ApplicationIcon>
+	<PackageIcon>./pencil.png</PackageIcon>
   </PropertyGroup>
 
 </Project>
