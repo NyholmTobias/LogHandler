@@ -1,8 +1,8 @@
 # LogHandler
 
-LogHandeler is a class library that lets you log your project in a simple way. By default you can debug and performance log, and the log messages are displayed in the debug window. 
-You may also bulk the debug messages so that they will be writen all at once. There is a function to add your own specific string properties. There is support for performance logging 
-methods that both has and dont have return values. Most major functionality is virtual so that you can customize the messages, enviroment and write functionality.
+LogHandler is a class library that lets you log your project in a simple way. By default you can debug and performance log, and the log messages are displayed in the debug window. 
+You may also bulk the messages so that they will be writen all at once. There is a function to add your own specific string properties. There is support for performance logging 
+methods that both has and dont have return values. Most major functionality is virtual so that you can customize the messages, enviroment and write options.
 
 ## Installation
 
