@@ -15,9 +15,9 @@
 	<RepositoryUrl>https://github.com/NyholmTobias/LogHandler</RepositoryUrl>
 	<PackageTags>Logging; Bulk log; Performance; Debug</PackageTags>
 	<ApplicationIcon>
-		pencil.ico
+		Icons/pencil.ico
 	</ApplicationIcon>
-	<PackageIcon>pencil.png</PackageIcon>
+	<PackageIcon>Icons/pencil.png</PackageIcon>
   </PropertyGroup>
 
 </Project>
