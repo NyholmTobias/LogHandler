@@ -5,22 +5,22 @@ on:
   branches: [ master ]
   
 jobs:
- build:
-  runs-on: ubuntu-latest
+  build:
+   runs-on: ubuntu-latest
   
-  steps:
-  - uses: actions/checkout@v2
-  - name: Setup .NET Core
-    uses: actions/setup-dotnet@v1
-  with:
-    dotnet-version: 6.*
-  - name: Install dependencies
-    run: dotnet restore
-  - name: Build
-    run: dotnet build --configuration Release --no-restore
-  - name: Publish LogHandler
-    uses: brandedoutcast/publish-nuget@v2.5.2
-  with:
-     PROJECT_FILE_PATH: LogHandler/LogHandler.csproj
-     NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-     PACKAGE_NAME: LogHandler
+   steps:
+   - uses: actions/checkout@v2
+   - name: Setup .NET Core
+     uses: actions/setup-dotnet@v1
+   with:
+     dotnet-version: 6.*
+   - name: Install dependencies
+     run: dotnet restore
+   - name: Build
+     run: dotnet build --configuration Release --no-restore
+   - name: Publish LogHandler
+     uses: brandedoutcast/publish-nuget@v2.5.2
+   with:
+      PROJECT_FILE_PATH: LogHandler/LogHandler.csproj
+      NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+      PACKAGE_NAME: LogHandler
