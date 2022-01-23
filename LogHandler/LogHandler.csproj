@@ -5,15 +5,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-	<Version>1.0.0.0</Version>
-	<AssemblyVersion>1.0.0.0</AssemblyVersion>
+	<Version>1.0.0.1</Version>
+	<AssemblyVersion>1.0.0.1</AssemblyVersion>
 	<Authors>Tobias Nyholm</Authors>
 	<Description>Enables logging for your project, can bulk log and also customize properties, enviroment and format for the logging.</Description>
 	<PackageProjectUrl>https://github.com/NyholmTobias/LogHandler</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/NyholmTobias/LogHandler</RepositoryUrl>
 	<PackageTags>Logging; Bulk log; Performance; Debug</PackageTags>
-	<ApplicationIcon>../pencil.ico</ApplicationIcon>
-	<PackageIcon>../pencil.png</PackageIcon>
+	<ApplicationIcon>pencil.ico</ApplicationIcon>
+	<PackageIcon>pencil.png</PackageIcon>
   </PropertyGroup>
 
 </Project>

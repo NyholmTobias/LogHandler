@@ -1661,7 +1661,7 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "LogHandler/1.0.0": {
+      "LogHandler/1.0.0.1": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
@@ -6204,7 +6204,7 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "LogHandler/1.0.0": {
+    "LogHandler/1.0.0.1": {
       "type": "project",
       "path": "../LogHandler/LogHandler.csproj",
       "msbuildProject": "../LogHandler/LogHandler.csproj"
@@ -6212,7 +6212,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "LogHandler >= 1.0.0",
+      "LogHandler >= 1.0.0.1",
       "MSTest.TestAdapter >= 2.2.7",
       "MSTest.TestFramework >= 2.2.7",
       "Microsoft.NET.Test.Sdk >= 16.11.0",
