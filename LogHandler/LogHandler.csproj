@@ -5,10 +5,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-	<Version>1.0.0.1</Version>
-	<AssemblyVersion>1.0.0.1</AssemblyVersion>
+	<Version>1.0.0.2</Version>
+	<AssemblyVersion>1.0.0.2</AssemblyVersion>
 	<Authors>Tobias Nyholm</Authors>
-	<Description>Enables logging for your project, can bulk log and also customize properties, enviroment and format for the logging.</Description>
+	<Description>For basic debug and performance logging. Log objects, enviroments and prints can be customized. Supports bulk logging by default, and can handle performance logging for methods with a return value.</Description>
 	<PackageProjectUrl>https://github.com/NyholmTobias/LogHandler</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/NyholmTobias/LogHandler</RepositoryUrl>
 	<PackageTags>Logging; Bulk log; Performance; Debug</PackageTags>
